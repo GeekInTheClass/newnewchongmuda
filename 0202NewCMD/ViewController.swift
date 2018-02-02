@@ -24,9 +24,6 @@ class ViewController: UIViewController {
     
     var tmpMoneyData = MoneyDataProvider().depositDatas
     
-    var moneySpent = ["일에","대한","출금","내역이 여기에"]
-    let images = ["영수증1","영수증1-1","영수증1-2","영수증1-3"]
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
