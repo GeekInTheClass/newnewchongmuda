@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3550CE3BE1E0658C28A0BF24 /* Pods_0202NewCMD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 863A52803D791FA676C30E38 /* Pods_0202NewCMD.framework */; };
 		660E53412022F57000CC9558 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660E53402022F57000CC9558 /* AppDelegate.swift */; };
 		660E53432022F57000CC9558 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660E53422022F57000CC9558 /* ViewController.swift */; };
 		660E53462022F57000CC9558 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 660E53442022F57000CC9558 /* Main.storyboard */; };
@@ -26,6 +27,9 @@
 		660E534C2022F57000CC9558 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6628386C20240993001823B2 /* MoneyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyData.swift; sourceTree = "<group>"; };
 		6628387220242844001823B2 /* MoneyDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyDataProvider.swift; sourceTree = "<group>"; };
+		863A52803D791FA676C30E38 /* Pods_0202NewCMD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_0202NewCMD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F26642DFA192F57686B0232 /* Pods-0202NewCMD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-0202NewCMD.release.xcconfig"; path = "Pods/Target Support Files/Pods-0202NewCMD/Pods-0202NewCMD.release.xcconfig"; sourceTree = "<group>"; };
+		A4D829FE065EDACD46F75F32 /* Pods-0202NewCMD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-0202NewCMD.debug.xcconfig"; path = "Pods/Target Support Files/Pods-0202NewCMD/Pods-0202NewCMD.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3550CE3BE1E0658C28A0BF24 /* Pods_0202NewCMD.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +49,8 @@
 			children = (
 				660E533F2022F57000CC9558 /* 0202NewCMD */,
 				660E533E2022F57000CC9558 /* Products */,
+				A649F34D45BA2A410605D1F4 /* Pods */,
+				C045EC4AAF864094B42A6222 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,6 +85,23 @@
 			path = CellModel;
 			sourceTree = "<group>";
 		};
+		A649F34D45BA2A410605D1F4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A4D829FE065EDACD46F75F32 /* Pods-0202NewCMD.debug.xcconfig */,
+				9F26642DFA192F57686B0232 /* Pods-0202NewCMD.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C045EC4AAF864094B42A6222 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				863A52803D791FA676C30E38 /* Pods_0202NewCMD.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -85,9 +109,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 660E534F2022F57000CC9558 /* Build configuration list for PBXNativeTarget "0202NewCMD" */;
 			buildPhases = (
+				82EA48E245E866A42D3D446F /* [CP] Check Pods Manifest.lock */,
 				660E53392022F57000CC9558 /* Sources */,
 				660E533A2022F57000CC9558 /* Frameworks */,
 				660E533B2022F57000CC9558 /* Resources */,
+				738383C9FDFAA43B34211A44 /* [CP] Embed Pods Frameworks */,
+				A106A2D397C0FBA79EF5772A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -144,6 +171,76 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		738383C9FDFAA43B34211A44 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-0202NewCMD/Pods-0202NewCMD-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/CVCalendar/CVCalendar.framework",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+				"${BUILT_PRODUCTS_DIR}/ChartsRealm/ChartsRealm.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CVCalendar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChartsRealm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-0202NewCMD/Pods-0202NewCMD-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		82EA48E245E866A42D3D446F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-0202NewCMD-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A106A2D397C0FBA79EF5772A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-0202NewCMD/Pods-0202NewCMD-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		660E53392022F57000CC9558 /* Sources */ = {
@@ -211,6 +308,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -268,6 +366,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -288,9 +387,11 @@
 		};
 		660E53502022F57000CC9558 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4D829FE065EDACD46F75F32 /* Pods-0202NewCMD.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = 0202NewCMD/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.minkyung.0202NewCMD;
@@ -302,9 +403,11 @@
 		};
 		660E53512022F57000CC9558 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F26642DFA192F57686B0232 /* Pods-0202NewCMD.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = 0202NewCMD/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.minkyung.0202NewCMD;
