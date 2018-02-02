@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  <<New>>CMD
+//  0202NewCMD
 //
 //  Created by CAUADC on 2018. 2. 1..
 //  Copyright © 2018년 minkyung. All rights reserved.
