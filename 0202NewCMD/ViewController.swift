@@ -53,17 +53,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Dispose of any resources that can be recreated.
     }
 
-<<<<<<< HEAD
-    @IBAction func switchCustomTableViewAction(_ sender: UISegmentedControl) {
-        p = sender.selectedSegmentIndex
-        tableView.reloadData()
-    }
-
-}
 
 extension ViewController: UITableViewDataSource{
-=======
->>>>>>> 17cd209d8fbf967cc95c379e2a26c23d38cfa03a
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var returnValue = 1
 
