@@ -8,10 +8,12 @@
 
 import UIKit
 
+private let formatter = DateFormatter()
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-
+    var data:[MoneyData] = makeData()
+    
     @IBOutlet var receiptView: UIView!
     @IBOutlet var calenderView: UIView!
     @IBOutlet var dailyView: UIView!
@@ -45,17 +47,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
-    var data1 = [
-        ["일., 이삭토스트., 간식사업 100명., 130,000원" , "출금., 이삭토스트., 간식사업 100명., 130,000원","출금., 이삭토스트., 간식사업 100명., 130,000원","출금., 이삭토스트., 간식사업 100명., 130,000원"]
-    ]
-
-    let images = ["영수증1-4","영수증1-4","영수증1-4","통계 - 월별"]
     
-    var p: Int!
-
-    
-    
-//    var tmpMoneyData = MoneyDataProvider().depositDatas
+    var tmpMoneyData:[MoneyData] = makeData()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,7 +56,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         tableView.dataSource = self
         tableView.delegate = self
-        p = 0
 
     }
 
@@ -73,33 +65,75 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data1[p].count
+        return tmpMoneyData.count
 
     }
     
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FirstCustomCell") as! FirstCustomCell
-        let str = data1[p][indexPath.row].components(separatedBy: ".,")
-        
-        cell.customInit(whereMoneySpent: str[1], memo: str[2], howMuch: str[3], inOrOut: str[0], receiptImage: UIImage.init())
-        cell.receiptImage.image = UIImage(named: images[indexPath.row])
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FirstCustomCell", for: indexPath) as! FirstCustomCell
 
+        cell.whereMoneySpent.text = tmpMoneyData[indexPath.row].title
+        cell.inOrOutLabel.text = tmpMoneyData[indexPath.row].isDeposit
+        if cell.inOrOutLabel.text == "출금" {
+            cell.inOrOutLabel.textColor = UIColor.cyan
+        } else {
+            cell.inOrOutLabel.textColor = UIColor.orange
+        }
+        
+        cell.memoLabel.text = tmpMoneyData[indexPath.row].subtitle
+        cell.receiptImage.image =  tmpMoneyData[indexPath.row].bills
+        cell.howMuchSpent.text = tmpMoneyData[indexPath.row].money
+        if cell.inOrOutLabel.text == "출금" {
+            cell.howMuchSpent.textColor = UIColor.cyan
+        } else {
+            cell.howMuchSpent.textColor = UIColor.orange
+        }
         return cell
-//
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "FirstCustomCell", for: indexPath) as! FirstCustomCell
-//
-//        cell.whereMoneySpent.text = tmpMoneyData[indexPath.row].title
-//        cell.inOrOutLabel.text = String(tmpMoneyData[indexPath.row].isDeposit)
-//        cell.memoLabel.text = tmpMoneyData[indexPath.row].subtitle
-//        cell.receiptImage.image = UIImage(named: tmpMoneyData[indexPath.row].bills)
-//        cell.howMuchSpent.text = String(tmpMoneyData[indexPath.row].money)
-//        return cell
         
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detailSegue" {
+            guard let destination = segue.destination as? DetailViewController, let selectedIndex = self.tableView.indexPathForSelectedRow?.row else {
+                return
+            }
+            destination.moneyData = data[selectedIndex]
+        }
+        
+    }
 }
     
 
-
+func makeData() -> [MoneyData] {
+    var depositDatas:[MoneyData] = []
+    formatter.dateFormat = "yyyy/MM/dd"
+    depositDatas.append(MoneyData(title: "이삭 토스트",
+                                  money: -130000,
+                                  subtitle: "간식사업 100명",
+                                  date: formatter.date(from: "2017/03/31")!,
+                                  bills: #imageLiteral(resourceName: "영수증1")
+    ))
+    depositDatas.append(MoneyData(title: "버스 대여",
+                                  money: -900500,
+                                  subtitle: "새터 버스 3대",
+                                  date: formatter.date(from: "2017/03/30")!,
+                                  bills: #imageLiteral(resourceName: "영수증1")))
+    depositDatas.append(MoneyData(title: "숙소 나머지",
+                                  money: -425000,
+                                  subtitle: "새터 버스 3대",
+                                  date: formatter.date(from: "2017/03/29")!,
+                                  bills: #imageLiteral(resourceName: "영수증1")))
+    depositDatas.append(MoneyData(title: "닭강정",
+                                  money: -90000,
+                                  subtitle: "새터 버스 3대",
+                                  date: formatter.date(from: "2017/03/29")!,
+                                  bills: #imageLiteral(resourceName: "영수증1")))
+    depositDatas.append(MoneyData(title: "가람터",
+                                  money: -45000,
+                                  subtitle: "새터 버스 3대",
+                                  date: formatter.date(from: "2017/03/29")!,
+                                  bills: #imageLiteral(resourceName: "영수증1")))
+    return depositDatas
+}

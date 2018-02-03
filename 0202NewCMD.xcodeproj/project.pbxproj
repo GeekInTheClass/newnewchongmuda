@@ -14,8 +14,8 @@
 		660E53482022F57000CC9558 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 660E53472022F57000CC9558 /* Assets.xcassets */; };
 		660E534B2022F57000CC9558 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 660E53492022F57000CC9558 /* LaunchScreen.storyboard */; };
 		6628386D20240993001823B2 /* MoneyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6628386C20240993001823B2 /* MoneyData.swift */; };
-		6628387320242844001823B2 /* MoneyDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6628387220242844001823B2 /* MoneyDataProvider.swift */; };
-		E606CFCC202570320042303A /* StatisticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E606CFCB202570320042303A /* StatisticViewController.swift */; };
+		66AFA70520258D8900D3C0AC /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AFA70420258D8900D3C0AC /* DetailTableViewController.swift */; };
+		66AFA70A20259B9D00D3C0AC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AFA70920259B9D00D3C0AC /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,11 +27,11 @@
 		660E534A2022F57000CC9558 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		660E534C2022F57000CC9558 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6628386C20240993001823B2 /* MoneyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyData.swift; sourceTree = "<group>"; };
-		6628387220242844001823B2 /* MoneyDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyDataProvider.swift; sourceTree = "<group>"; };
+		66AFA70420258D8900D3C0AC /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
+		66AFA70920259B9D00D3C0AC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		863A52803D791FA676C30E38 /* Pods_0202NewCMD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_0202NewCMD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F26642DFA192F57686B0232 /* Pods-0202NewCMD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-0202NewCMD.release.xcconfig"; path = "Pods/Target Support Files/Pods-0202NewCMD/Pods-0202NewCMD.release.xcconfig"; sourceTree = "<group>"; };
 		A4D829FE065EDACD46F75F32 /* Pods-0202NewCMD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-0202NewCMD.debug.xcconfig"; path = "Pods/Target Support Files/Pods-0202NewCMD/Pods-0202NewCMD.debug.xcconfig"; sourceTree = "<group>"; };
-		E606CFCB202570320042303A /* StatisticViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +70,8 @@
 				660E53542022F98100CC9558 /* CellModel */,
 				660E53402022F57000CC9558 /* AppDelegate.swift */,
 				660E53422022F57000CC9558 /* ViewController.swift */,
-				E606CFCB202570320042303A /* StatisticViewController.swift */,
+				66AFA70920259B9D00D3C0AC /* DetailViewController.swift */,
+				66AFA70420258D8900D3C0AC /* DetailTableViewController.swift */,
 				660E53442022F57000CC9558 /* Main.storyboard */,
 				660E53472022F57000CC9558 /* Assets.xcassets */,
 				660E53492022F57000CC9558 /* LaunchScreen.storyboard */,
@@ -83,7 +84,6 @@
 			isa = PBXGroup;
 			children = (
 				6628386C20240993001823B2 /* MoneyData.swift */,
-				6628387220242844001823B2 /* MoneyDataProvider.swift */,
 			);
 			path = CellModel;
 			sourceTree = "<group>";
@@ -251,10 +251,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6628386D20240993001823B2 /* MoneyData.swift in Sources */,
+				66AFA70520258D8900D3C0AC /* DetailTableViewController.swift in Sources */,
 				660E53432022F57000CC9558 /* ViewController.swift in Sources */,
+				66AFA70A20259B9D00D3C0AC /* DetailViewController.swift in Sources */,
 				660E53412022F57000CC9558 /* AppDelegate.swift in Sources */,
-				E606CFCC202570320042303A /* StatisticViewController.swift in Sources */,
-				6628387320242844001823B2 /* MoneyDataProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
