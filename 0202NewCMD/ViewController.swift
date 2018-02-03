@@ -8,31 +8,54 @@
 
 import UIKit
 
-class FirstCustomCell: UITableViewCell {
-    
-    @IBOutlet weak var whereMoneySpent: UILabel!
-    @IBOutlet weak var inOrOutLabel: UILabel!
-    @IBOutlet weak var howMuchSpent: UILabel!
-    @IBOutlet weak var memoLabel: UILabel!
-    @IBOutlet weak var receiptImage: UIImageView!
-}
-
-
-
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
 
-    var selectedSegment = 0
-    
+    @IBOutlet var receiptView: UIView!
+    @IBOutlet var calenderView: UIView!
+    @IBOutlet var dailyView: UIView!
     @IBOutlet weak var tableView: UITableView!
-    
-    @IBAction func switchSegments(_ sender: UISegmentedControl) {
-        self.tableView.reloadData()
+
+    @IBOutlet var segmentedControl: UISegmentedControl!
+    @IBAction func segmentValueChanged(_ sender: UISegmentedControl) {
+        switch(sender.selectedSegmentIndex) {
+            // 일
+            case 0 :
+                self.dailyView.isHidden = false
+                self.calenderView.isHidden = true
+                self.receiptView.isHidden = true
+                break
+            // 달력
+            case 1 :
+                self.dailyView.isHidden = true
+                self.calenderView.isHidden = false
+                self.receiptView.isHidden = true
+                break
+            // 영수증 앨범
+            case 2 :
+                self.dailyView.isHidden = true
+                self.calenderView.isHidden = true
+                self.receiptView.isHidden = false
+                break
+            default:
+                break;
+            
+            
+        }
     }
     
+    var data1 = [
+        ["일., 이삭토스트., 간식사업 100명., 130,000원" , "출금., 이삭토스트., 간식사업 100명., 130,000원","출금., 이삭토스트., 간식사업 100명., 130,000원","출금., 이삭토스트., 간식사업 100명., 130,000원"]
+    ]
+
+    let images = ["영수증1-4","영수증1-4","영수증1-4","통계 - 월별"]
     
-    var tmpMoneyData = MoneyDataProvider().depositDatas
+    var p: Int!
+
+    
+    
+//    var tmpMoneyData = MoneyDataProvider().depositDatas
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +63,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         tableView.dataSource = self
         tableView.delegate = self
-        
+        p = 0
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,50 +73,33 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var returnValue = 0
+        return data1[p].count
 
-        return returnValue
     }
     
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FirstCustomCell") as! FirstCustomCell
+        let str = data1[p][indexPath.row].components(separatedBy: ".,")
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FirstCustomCell", for: indexPath) as! FirstCustomCell
-//        let cell2 = tableView.dequeueReusableCell(withIdentifier: "DateCustomCell", for: indexPath) as! DateCustomCell
-        
-        
-        cell.whereMoneySpent.text = tmpMoneyData[indexPath.row].title
-        cell.inOrOutLabel.text = String(tmpMoneyData[indexPath.row].isDeposit)
-        cell.memoLabel.text = tmpMoneyData[indexPath.row].subtitle
-        cell.receiptImage.image = UIImage(named: tmpMoneyData[indexPath.row].bills)
-        cell.howMuchSpent.text = String(tmpMoneyData[indexPath.row].money)
-        
-        if selectedSegment == 1 {
-            return cell
-        } else {
-            return cell
-        }
-        
-    }
-    
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//
-//    private func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) -> UITableViewCell {
-//            let cell1 = tableView.dequeueReusableCell(withIdentifier: "cell1")! as UITableViewCell
-//            let cell2 = tableView.dequeueReusableCell(withIdentifier: "cell2")! as UITableViewCell
-//
-//            cell1.textLabel?.text = array1[indexPath.row]
-//            cell2.textLabel?.text = array2[indexPath.row]
-//
-//        if selectedSegment == 1 {
-//            return cell1
-//        } else {
-//            return cell2
-//        }
-//    }
+        cell.customInit(whereMoneySpent: str[1], memo: str[2], howMuch: str[3], inOrOut: str[0], receiptImage: UIImage.init())
+        cell.receiptImage.image = UIImage(named: images[indexPath.row])
 
+        return cell
+//
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "FirstCustomCell", for: indexPath) as! FirstCustomCell
+//
+//        cell.whereMoneySpent.text = tmpMoneyData[indexPath.row].title
+//        cell.inOrOutLabel.text = String(tmpMoneyData[indexPath.row].isDeposit)
+//        cell.memoLabel.text = tmpMoneyData[indexPath.row].subtitle
+//        cell.receiptImage.image = UIImage(named: tmpMoneyData[indexPath.row].bills)
+//        cell.howMuchSpent.text = String(tmpMoneyData[indexPath.row].money)
+//        return cell
+        
     }
+
+}
     
 
 
