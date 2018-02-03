@@ -21,6 +21,7 @@ class FirstCustomCell: UITableViewCell {
 class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    var p: Int!
     
     var tmpMoneyData = MoneyDataProvider().depositDatas
     
@@ -28,14 +29,23 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        let nib = UINib(nibName: "FirstCustomCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "FirstCustomCell")
+        
         tableView.dataSource = self
         tableView.delegate = self
-        
+    
+        p = 0
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    @IBAction func switchCustomTableViewAction(_ sender: UISegmentedControl) {
+        p = sender.selectedSegmentIndex
+        tableView.reloadData()
     }
 
 }

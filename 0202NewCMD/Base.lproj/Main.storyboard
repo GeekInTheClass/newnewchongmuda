@@ -27,6 +27,9 @@
                                     <segment title="영 수 증"/>
                                 </segments>
                                 <color key="tintColor" red="1" green="0.79606428949999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="switchCustomTableViewAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="Ud2-q3-hgH"/>
+                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iRs-iv-r6Z">
                                 <rect key="frame" x="0.0" y="139" width="375" height="537"/>
