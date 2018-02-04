@@ -20,17 +20,7 @@ class FirstCustomCell: UITableViewCell {
         
         // Configure the view for the selected state
     }
-    
-    func customInit(whereMoneySpent:String, memo:String, howMuch:String, inOrOut:String, receiptImage:UIImage? ) {
-        self.whereMoneySpent.text = whereMoneySpent
-        self.memoLabel.text = memo
-        self.howMuchSpent.text = howMuch
-        self.inOrOutLabel.text = inOrOut
-        
-        self.memoLabel.textColor = UIColor.gray
-    }
 }
-
 
 class MoneyData {
     var title:String
