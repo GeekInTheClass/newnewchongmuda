@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/cauadc/Documents/GitHub/newnewchongmuda/0202NewCMD/ChartData.swift">
+   </FileRef>
+   <FileRef
       location = "group:0202NewCMD.xcodeproj">
    </FileRef>
    <FileRef

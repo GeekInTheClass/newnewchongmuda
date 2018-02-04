@@ -93,6 +93,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return cell
         
     }
+    
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        return 
+//    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "detailSegue" {
@@ -113,27 +117,35 @@ func makeData() -> [MoneyData] {
                                   money: -130000,
                                   subtitle: "간식사업 100명",
                                   date: formatter.date(from: "2017/03/31")!,
-                                  bills: #imageLiteral(resourceName: "영수증1")
+                                  bills: #imageLiteral(resourceName: "영수증 사진 1.jpg")
     ))
     depositDatas.append(MoneyData(title: "버스 대여",
                                   money: -900500,
                                   subtitle: "새터 버스 3대",
                                   date: formatter.date(from: "2017/03/30")!,
-                                  bills: #imageLiteral(resourceName: "영수증1")))
+                                  bills: #imageLiteral(resourceName: "영수증 사진 2.jpg")))
     depositDatas.append(MoneyData(title: "숙소 나머지",
                                   money: -425000,
                                   subtitle: "새터 버스 3대",
                                   date: formatter.date(from: "2017/03/29")!,
-                                  bills: #imageLiteral(resourceName: "영수증1")))
+                                  bills: #imageLiteral(resourceName: "영수증 사진 3.jpg")))
     depositDatas.append(MoneyData(title: "닭강정",
                                   money: -90000,
                                   subtitle: "새터 버스 3대",
                                   date: formatter.date(from: "2017/03/29")!,
-                                  bills: #imageLiteral(resourceName: "영수증1")))
+                                  bills: #imageLiteral(resourceName: "영수증 사진 1.jpg")))
     depositDatas.append(MoneyData(title: "가람터",
                                   money: -45000,
                                   subtitle: "새터 버스 3대",
                                   date: formatter.date(from: "2017/03/29")!,
-                                  bills: #imageLiteral(resourceName: "영수증1")))
+                                  bills: #imageLiteral(resourceName: "영수증 사진 2.jpg")))
     return depositDatas
 }
+
+
+
+
+
+
+
+
