@@ -16,6 +16,8 @@
 		6628386D20240993001823B2 /* MoneyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6628386C20240993001823B2 /* MoneyData.swift */; };
 		66AFA70520258D8900D3C0AC /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AFA70420258D8900D3C0AC /* DetailTableViewController.swift */; };
 		66AFA70A20259B9D00D3C0AC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AFA70920259B9D00D3C0AC /* DetailViewController.swift */; };
+		66CA6EA12026DB41001A6A7D /* hashTagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CA6EA02026DB41001A6A7D /* hashTagViewController.swift */; };
+		66CA6EA32026EE0C001A6A7D /* hastagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CA6EA22026EE0C001A6A7D /* hastagTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		6628386C20240993001823B2 /* MoneyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyData.swift; sourceTree = "<group>"; };
 		66AFA70420258D8900D3C0AC /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
 		66AFA70920259B9D00D3C0AC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		66CA6EA02026DB41001A6A7D /* hashTagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hashTagViewController.swift; sourceTree = "<group>"; };
+		66CA6EA22026EE0C001A6A7D /* hastagTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hastagTableViewCell.swift; sourceTree = "<group>"; };
 		863A52803D791FA676C30E38 /* Pods_0202NewCMD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_0202NewCMD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F26642DFA192F57686B0232 /* Pods-0202NewCMD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-0202NewCMD.release.xcconfig"; path = "Pods/Target Support Files/Pods-0202NewCMD/Pods-0202NewCMD.release.xcconfig"; sourceTree = "<group>"; };
 		A4D829FE065EDACD46F75F32 /* Pods-0202NewCMD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-0202NewCMD.debug.xcconfig"; path = "Pods/Target Support Files/Pods-0202NewCMD/Pods-0202NewCMD.debug.xcconfig"; sourceTree = "<group>"; };
@@ -72,6 +76,7 @@
 				660E53422022F57000CC9558 /* ViewController.swift */,
 				66AFA70920259B9D00D3C0AC /* DetailViewController.swift */,
 				66AFA70420258D8900D3C0AC /* DetailTableViewController.swift */,
+				66CA6EA02026DB41001A6A7D /* hashTagViewController.swift */,
 				660E53442022F57000CC9558 /* Main.storyboard */,
 				660E53472022F57000CC9558 /* Assets.xcassets */,
 				660E53492022F57000CC9558 /* LaunchScreen.storyboard */,
@@ -84,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				6628386C20240993001823B2 /* MoneyData.swift */,
+				66CA6EA22026EE0C001A6A7D /* hastagTableViewCell.swift */,
 			);
 			path = CellModel;
 			sourceTree = "<group>";
@@ -254,7 +260,9 @@
 				66AFA70520258D8900D3C0AC /* DetailTableViewController.swift in Sources */,
 				660E53432022F57000CC9558 /* ViewController.swift in Sources */,
 				66AFA70A20259B9D00D3C0AC /* DetailViewController.swift in Sources */,
+				66CA6EA32026EE0C001A6A7D /* hastagTableViewCell.swift in Sources */,
 				660E53412022F57000CC9558 /* AppDelegate.swift in Sources */,
+				66CA6EA12026DB41001A6A7D /* hashTagViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

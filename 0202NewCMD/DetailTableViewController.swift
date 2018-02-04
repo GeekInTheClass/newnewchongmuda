@@ -1,4 +1,3 @@
-
 //  DetailTableViewController.swift
 //  0202NewCMD
 //
@@ -16,7 +15,7 @@ protocol SendBackProtocol {
     func sendDataBack(dataSentBack:sentBackData)
 }
 
-class DetailTableViewController: UITableViewController, SendBackProtocol {
+class DetailTableViewController: UITableViewController {
     
     
     var delegate:SendBackProtocol?
@@ -38,14 +37,12 @@ class DetailTableViewController: UITableViewController, SendBackProtocol {
 
     
     @IBOutlet weak var addphoto1: UIButton!
-    @IBOutlet weak var bills1: UIImageView!
+    
     
     
     
     @IBAction func addPhoto(_ sender: Any) {
         image.delegate = self
-        //        self.btnEdit.setTitleColor(UIColor.white, for: .normal)
-        //        self.btnEdit.isUserInteractionEnabled = true
         
         let alert = UIAlertController(title: "사진선택", message: nil, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "카메라", style: .default, handler: { _ in
@@ -92,6 +89,9 @@ class DetailTableViewController: UITableViewController, SendBackProtocol {
         whereMoneySpent?.text = data?.title
         howMuchSpent?.text = data?.money
         
+        //사진버튼 동그란 모서리
+        addphoto1.layer.cornerRadius = 10.0
+        addphoto1.clipsToBounds = true
         //레이블 색깔 바꾸기
         if inOrOutLabel.text == "출금" {
             inOrOutLabel.textColor = UIColor.cyan
@@ -119,14 +119,11 @@ class DetailTableViewController: UITableViewController, SendBackProtocol {
     
     
     
-    // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return 3
     }
     
@@ -136,23 +133,21 @@ class DetailTableViewController: UITableViewController, SendBackProtocol {
 //사진 변경 적용 및 전송 데이터 적용
 extension DetailTableViewController:  UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        /*
-         Get the image from the info dictionary.
-         If no need to edit the photo, use `UIImagePickerControllerOriginalImage`
-         instead of `UIImagePickerControllerEditedImage`
-         */
-        if let editedImage = info[UIImagePickerControllerEditedImage] as? UIImage{
-            self.bills1.image = editedImage
-            self.addphoto1.isHidden = true
-            dataToBeSentBack?.bills = editedImage
-        }
         
-        //Dismiss the UIImagePicker after selection
+        if let editedImage = info[UIImagePickerControllerEditedImage] as? UIImage{
+            self.addphoto1.setTitle("", for: UIControlState.normal)
+            self.addphoto1.setBackgroundImage(editedImage, for: UIControlState.normal)
+            print("Image selected")
+            dataToBeSentBack?.bills = editedImage
+            print("Image added to data")
+        }
+        //선택 후 사진 모달 디스미스
         picker.dismiss(animated: true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         print("Cancelled")
+        picker.dismiss(animated: true, completion: nil)
     }
     
 }

@@ -5,7 +5,6 @@
 //  Created by CAUADC on 2018. 2. 1..
 //  Copyright © 2018년 minkyung. All rights reserved.
 //
-
 import UIKit
 
 private let formatter = DateFormatter()
