@@ -14,5 +14,4 @@ target '0202NewCMD' do
 	pod 'Alamofire', '~> 4.5.1'
 	pod 'CVCalendar', '~> 1.6.0'
 
-
 end
