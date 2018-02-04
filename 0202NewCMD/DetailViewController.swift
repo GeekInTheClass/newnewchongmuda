@@ -12,6 +12,8 @@ class DetailViewController: UIViewController {
 
     var moneyData:MoneyData?
     
+    var valueSentFromDetailTableViewController:sentBackData?
+    
     @IBAction func cancelDetail(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -48,5 +50,6 @@ class DetailViewController: UIViewController {
         }
         
     }
+    
 }
 
